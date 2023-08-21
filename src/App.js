@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+const helloClick = (e) => {
+    if(e.target.classList.contains('red')){
+        e.target.classList.add('blue')
+    }else{
+        e.target.classList.add('red')
+    }
+}
+class Square extends React.Component{
+    render(){
+        return(
+            <div className="trwo">
+                <button onClick={helloClick} className="red"></button>
+                <button onClick={helloClick} className="blue"></button>
+            </div>
+        )
+    }
 }
 
-export default App;
+export default Square;
